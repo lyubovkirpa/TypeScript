@@ -1,0 +1,9 @@
+.counter {
+    display: flex;
+    justify-content: space-between;
+    width: 70px;
+  }
+
+.state-practice {
+    margin-bottom: 5px;
+}
