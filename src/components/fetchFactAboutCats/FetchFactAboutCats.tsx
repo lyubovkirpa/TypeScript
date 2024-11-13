@@ -4,7 +4,7 @@ import "./fetchFactAboutCats.css";
 import Loader from "../loader/Loader";
 
 export default function FetchFactAboutCats(): JSX.Element {
-  const [fact, setFact] = useState<string>("");
+  const [facts, setFacts] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   const fetchFactAboutCats = async (): Promise<void> => {
@@ -15,7 +15,7 @@ export default function FetchFactAboutCats(): JSX.Element {
 
     const res = await fetch("https://catfact.ninja/fact");
     const data: IFactData = await res.json();
-    setFact(data.fact);
+    setFacts((prevFacts) => [...prevFacts, data.fact]);
     setLoading(false);
   };
 
@@ -23,8 +23,12 @@ export default function FetchFactAboutCats(): JSX.Element {
     setLoading(true);
     setTimeout(() => {
       fetchFactAboutCats();
-    }, 1500);
+    }, 500);
   };
+
+  const handleDeleteFacts = () => {
+    setFacts([])
+  }
 
   useEffect(() => {
     fetchFactAboutCats();
@@ -33,17 +37,20 @@ export default function FetchFactAboutCats(): JSX.Element {
   return (
     <div className="lesson-container">
       <h2>Fetch Fact About Cats</h2>
-      <MyButton func={handleGetFact} text="GET MORE INFO" />
-      <MyButton text="DELETE ALL DATA" />
+      <MyButton text="GET MORE INFO" func={handleGetFact}/>
+      {facts.length > 0 && <MyButton text="DELETE ALL DATA" func={handleDeleteFacts} />}
 
       {loading ? (
         <Loader />
       ) : (
         <section className="box-info">
-          <article className="text-info">{fact}</article>
+          {facts.map((fact, index) => (
+            <article key={index} className="text-info">
+              {fact}
+            </article>
+          ))}
         </section>
       )}
-
     </div>
   );
 }
