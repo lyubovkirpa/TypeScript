@@ -1,4 +1,3 @@
-import { log } from "console";
 
 export default function Lesson06() {
   //* 1.string
@@ -80,3 +79,4 @@ export default function Lesson06() {
     </div>
   );
 }
+

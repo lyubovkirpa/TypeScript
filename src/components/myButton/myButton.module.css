@@ -1,5 +1,5 @@
-.my-button {
-    background-color: rgb(255, 230, 0);
+.myButton {
+    background-color: rgb(0, 110, 255);
     color: white;
     border: none;
     border-radius: 8px;
@@ -8,18 +8,18 @@
     margin: 3px;
 }
 
-.btn-primary {
+.btnPrimary {
     background-color: rgb(98, 89, 106);
 }
 
-.btn-danger {
-    background-color: red;
+.btnDanger {
+    background-color: rgb(68, 0, 255);
 }
 
-.btn-primary:hover {
+.btnPrimary:hover {
     background-color: blueviolet;
 }
 
-.btn-danger:hover {
-    background-color: rgb(43, 226, 107);
+.btnDanger:hover {
+    background-color: rgb(43, 162, 226);
 }
