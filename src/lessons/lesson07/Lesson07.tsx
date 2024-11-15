@@ -1,14 +1,14 @@
-import React from "react";
-
 export default function Lesson07() {
-  //* функции
+   // * функции
 
-  //   const showMessage = (message: string):string => {
-  //     console.log(`message: ${message}`);
-  //     return `message: ${message}`
-  //   };
-  //   showMessage('hello')
+  // * тип параметра функции указывается через двоеточие в круглых скобках
+  // * тип возвращенного значения указывается после круглых скобок
+  // const showMessage = (message: string):string => {
+  //   console.log(`message: ${message}`)
+  //   return `message: ${message}`
+  // }
 
+  // * если у функции нет возвращаемого значения - она возвращает тип void
   const showMessage = (message: string): void => {
     console.log(`message: ${message}`);
   };

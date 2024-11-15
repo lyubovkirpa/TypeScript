@@ -1,0 +1,24 @@
+.header {
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  height: 80px;
+  color: white;
+  background-color: rgba(89, 32, 142, 0.823);
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+.header a:hover {
+  text-decoration: underline;
+}
+
+.linkActive {
+  text-decoration: underline !important;
+}
